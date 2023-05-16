@@ -4,10 +4,22 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background-color: #333;
+}
+
 :root {
   --size: 600px;
   --block-height: 20px;
   --block-width: 50px;
+  --block-margin: 100px;
+  --player-color: red;
 }
 
 .board {
@@ -20,14 +32,45 @@
   background: greenyellow;
   height: var(--block-height);
   width: var(--block-width);
+  margin-bottom: var(--block-margin);
 }
 
-body {
+.player {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+.player-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
-  z-index: 100;
-  background-color: red;
+  /* justify-content: center; */
+}
+
+.head {
+  background-color: var(--player-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+}
+
+.body {
+  background-color: var(--player-color);
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.legs {
+  display: flex;
+  flex-direction: row;
+}
+
+.leg {
+  height: 30px;
+  width: 10px;
+  margin-right: 1px;
+  /* border-radius: 5px; */
+  background: var(--player-color);
 }
